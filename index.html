@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#0e1726" />
+    <title>Bricks</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bricks-navy-slate: #16243b;
+        --bricks-board-2d: #131c2e;
+        --bricks-chassis: #090f1a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: var(--bricks-chassis);
+        overflow: hidden;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      #app {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+      }
+      #hud {
+        flex: 0 0 auto;
+        position: relative;
+        z-index: 50;
+      }
+      #board {
+        flex: 1 1 auto;
+        position: relative;
+        min-height: 0;
+        overflow: hidden;
+      }
+      #modals {
+        position: fixed;
+        inset: 0;
+        z-index: 200;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header id="hud"></header>
+      <main id="board"></main>
+    </div>
+    <div id="modals"></div>
+    <script type="module" src="/src/index.js"></script>
+  </body>
+</html>
